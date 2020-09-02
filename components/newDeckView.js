@@ -15,7 +15,7 @@ class NewDeckView extends React.Component {
     if(title!==''){
       saveDeckTitle(title)
       this.props.dispatch(addDeck(title))
-      navigation.navigate('Home')
+      navigation.navigate('Details',  {deckTitle : title , deckLength:0})
       this.setState({
         title: ''
       })
