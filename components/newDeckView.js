@@ -12,13 +12,17 @@ class NewDeckView extends React.Component {
   }
   submitName = () => {
     const { text } = this.state
-
-    saveDeckTitle(text)
-    this.props.dispatch(addDeck(text))
-    this.props.navigation.navigate('DeckView', { entryId: text })
-    this.setState({
-      text: ''
-    })
+    if(text!==''){
+      saveDeckTitle(text)
+      this.props.dispatch(addDeck(text))
+      this.props.navigation.navigate('DeckListView')
+      this.setState({
+        text: ''
+      })
+    } else {
+      alert('empty input')
+    }
+    
 
   }
   render() {
