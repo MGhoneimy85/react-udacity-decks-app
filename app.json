@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "react-udacity-decks-app",
+    "slug": "snack-c521d090-b833-4201-ad8a-ba8ebf8a112f",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "Udacity React nanodegree last project"
+  }
+}
