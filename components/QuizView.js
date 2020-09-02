@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   buttonBorder:{
-      width:'150px',
+      width:150,
       borderColor:'green',
       borderWidth:2,
       borderRadius:5,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   buttonBackgroundCorrect:{
-      width:'150px',
+      width:150,
       borderColor:'#000',
       borderWidth:2,
       borderRadius:5,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
       textAlign: 'center'
   },
   buttonBackgroundinCorrect:{
-    width:'150px',
+    width:150,
     borderColor:'#000',
     borderWidth:2,
     borderRadius:5,
