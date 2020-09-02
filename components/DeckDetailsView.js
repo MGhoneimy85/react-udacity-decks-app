@@ -16,7 +16,7 @@ class DeckDetailsView  extends React.Component {
           <TouchableOpacity  style={styles.buttonBorder} onPress={() => navigation.navigate('New Card', {deck: title}) } >
             <Text style={styles.textButtonBorder}>Add Card</Text>
           </TouchableOpacity>
-          <TouchableOpacity  style={styles.buttonBackground}>
+          <TouchableOpacity  style={styles.buttonBackground}  onPress={() => navigation.navigate('Quiz', {deck: title}) }>
             <Text style={styles.textButtonBg}>Start Quiz</Text>
           </TouchableOpacity>
           
@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   },
   textButtonBorder:{
     color:'#fff',
-    fontSize:'20px'
+    fontSize:'20px',
+    textAlign: 'center'
   },
   buttonBackground:{
       width:'150px',
@@ -69,7 +70,8 @@ const styles = StyleSheet.create({
   },
   textButtonBg:{
     color:'#000',
-      fontSize:'20px'
+      fontSize:'20px',
+      textAlign: 'center'
   }
 });
 

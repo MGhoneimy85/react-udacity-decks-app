@@ -15,7 +15,6 @@ class DeckListView  extends React.Component {
   const navigation = this.props.navigation
   return (
     <ScrollView>
-     
         {Object.values(decksList).map((item) => {
             return(
               <View style={styles.listItem} key={item.title}>
@@ -48,7 +47,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
     marginTop: 10 ,
-    width:'100%' ,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: 10,
+    width:'90%' ,
     backgroundColor: 'blue'
   },
   textStyle: {

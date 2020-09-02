@@ -12,6 +12,8 @@ import DeckListView from './components/DeckListView';
 import NewDeckView from './components/newDeckView';
 import DeckDetailsView from './components/DeckDetailsView';
 import newCardView from './components/newCardView';
+import quizView from './components/QuizView';
+
  
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -26,6 +28,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="Home" component={DeckListView} />
       <HomeStack.Screen name="Details" component={DeckDetailsView} />
       <HomeStack.Screen name="New Card" component={newCardView}  />
+      <HomeStack.Screen name="Quiz" component={quizView}  />
     </HomeStack.Navigator>
   );
 }

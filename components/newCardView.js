@@ -32,8 +32,6 @@ class newCardView extends React.Component {
 
   }
   render() {
-    const {navigation} = this.props
-    console.log(navigation)
     return (
       <View style={styles.container}>
         <Text>Question</Text>
