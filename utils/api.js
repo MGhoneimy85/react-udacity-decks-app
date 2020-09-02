@@ -50,7 +50,7 @@ export function saveDeckTitle(title){
   }))
 }
 
-export function addCardToDeck (name, card) {
+export function saveCardToDeck (name, card) {
 return AsyncStorage.getItem(DATA_STORAGE_KEY)
 .then(results => JSON.parse(results))
 .then(results => {

@@ -8,16 +8,16 @@ import { saveDeckTitle } from '../utils/api'
 
 class NewDeckView extends React.Component {
   state = {
-    text: ''
+    title: ''
   }
-  submitName = () => {
-    const { text } = this.state
-    if(text!==''){
-      saveDeckTitle(text)
-      this.props.dispatch(addDeck(text))
-      this.props.navigation.navigate('DeckListView')
+  submitDeck = (navigation) => {
+    const { title } = this.state
+    if(title!==''){
+      saveDeckTitle(title)
+      this.props.dispatch(addDeck(title))
+      navigation.navigate('Home')
       this.setState({
-        text: ''
+        title: ''
       })
     } else {
       alert('empty input')
@@ -29,8 +29,8 @@ class NewDeckView extends React.Component {
     return (
       <View style={styles.container}>
         <Text>What is the Title of Your New Deck?</Text>
-        <TextInput style={styles.input} onChangeText={(text) => this.setState({ text })} value={this.state.text} />
-        <TouchableOpacity  style={styles.buttonBackground} onPress={this.submitName} >
+        <TextInput style={styles.input} onChangeText={(title) => this.setState({ title })} value={this.state.title} />
+        <TouchableOpacity  style={styles.buttonBackground} onPress={() => this.submitDeck(this.props.navigation)} >
             <Text style={styles.textButtonBg}>Submit</Text>
         </TouchableOpacity>
       </View>
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor:'#000',
     padding: 10,
     marginBottom:10,
-    textAlign:"center"
     
 },
 textButtonBg:{

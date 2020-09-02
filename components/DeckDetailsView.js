@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux'
 
 class DeckDetailsView  extends React.Component {
    
   render(){
       const title  = this.props.route.params.deckTitle
       const length  = this.props.route.params.deckLength
+      const navigation = this.props.navigation
+      console.log(this.props.route)
       return (
         <View style={styles.container}>
           <Text style={styles.title} >{title}</Text>
           <Text style={styles.text} >{length} Cards</Text>
-          <TouchableOpacity  style={styles.buttonBorder}>
+          <TouchableOpacity  style={styles.buttonBorder} onPress={() => navigation.navigate('New Card', {deck: title}) } >
             <Text style={styles.textButtonBorder}>Add Card</Text>
           </TouchableOpacity>
           <TouchableOpacity  style={styles.buttonBackground}>
@@ -47,8 +50,7 @@ const styles = StyleSheet.create({
       borderRadius:'5px',
       backgroundColor:'#000',
       padding: 10,
-      marginBottom:10,
-      textAlign:"center"
+      marginBottom:10
       
   },
   textButtonBorder:{
@@ -62,8 +64,7 @@ const styles = StyleSheet.create({
       borderRadius:'5px',
       backgroundColor:'#fff',
       padding: 10,
-      marginBottom:10,
-      textAlign:"center"
+      marginBottom:10
       
   },
   textButtonBg:{
@@ -73,4 +74,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default DeckDetailsView
+export default connect()(DeckDetailsView)

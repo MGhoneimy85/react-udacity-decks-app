@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer  } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import DeckListView from './components/DeckListView';
-import NewDeckView from './components/newDeckView';
-import DeckDetailsView from './components/DeckDetailsView';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import reducer from './reducers/index';
+import DeckListView from './components/DeckListView';
+import NewDeckView from './components/newDeckView';
+import DeckDetailsView from './components/DeckDetailsView';
+import newCardView from './components/newCardView';
  
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -23,11 +25,11 @@ function HomeStackScreen() {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={DeckListView} />
       <HomeStack.Screen name="Details" component={DeckDetailsView} />
+      <HomeStack.Screen name="New Card" component={newCardView}  />
     </HomeStack.Navigator>
   );
 }
 export default function App() {
- 
   return (
      <Provider store={store}>
       <NavigationContainer>
