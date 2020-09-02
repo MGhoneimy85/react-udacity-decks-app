@@ -3,7 +3,8 @@ import { Text, View, StyleSheet, Button  , ScrollView} from 'react-native';
 
 import { connect } from 'react-redux';
 import { getDecks } from '../utils/api';
-import { receiveDecks } from '../actions'
+import { receiveDecks } from '../actions';
+import { purple } from '../utils/colors';
 class DeckListView  extends React.Component {
 
  componentDidMount(){
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     borderRadius: 10,
     width:'90%' ,
-    backgroundColor: 'blue'
+    backgroundColor: purple
   },
   textStyle: {
     color:'white',

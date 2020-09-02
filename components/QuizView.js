@@ -6,7 +6,9 @@ import { receiveDecks } from '../actions'
 class QuizView  extends React.Component {
   state = {
     currentQuestionIndex: 0,
-    showAnswerFlag:false
+    showAnswerFlag:false,
+    correctAnswer:0,
+    incorrectAnswer:0,
   }
   componentDidMount(){
     getDecks().then(decks => this.props.recieveDecks(decks))
@@ -14,7 +16,7 @@ class QuizView  extends React.Component {
   render(){
     const currentQuestionIndex = this.state.currentQuestionIndex
     const currentQuestionNumber = this.state.currentQuestionIndex + 1
-    
+    console.log(this.state)
       console.log(this.props)
       const { decksList } = this.props
       console.log(decksList)
@@ -32,16 +34,16 @@ class QuizView  extends React.Component {
         if(currentQuestionIndex < questions.length){
           return (
             <View style={styles.container}>
-              <Text> {currentQuestionNumber} / {questions.length} </Text>
-              { !this.state.showAnswerFlag ?  <Text> {questions[currentQuestionIndex].question}</Text> : <Text> {questions[currentQuestionIndex].answer}</Text> }
-                <TouchableOpacity  style={styles.buttonBorder}  onPress={() => this.setState({ showAnswerFlag: true}) }>
-                  <Text style={styles.textButtonBorder}>Show Answer</Text>
+              <Text style={styles.text}> {currentQuestionNumber} / {questions.length} </Text>
+              { !this.state.showAnswerFlag ?  <Text style={styles.text}> {questions[currentQuestionIndex].question}</Text> : <Text style={styles.text}> {questions[currentQuestionIndex].answer}</Text> }
+                <TouchableOpacity  style={styles.buttonBorder}  onPress={() => this.setState({ showAnswerFlag: !this.state.showAnswerFlag}) }>
+                  <Text style={styles.textButtonBorder}> {!this.state.showAnswerFlag ? 'Show Answer' : 'Show Question' } </Text>
                 </TouchableOpacity>
-                <TouchableOpacity  style={styles.buttonBackgroundCorrect}  onPress={() => this.setState({ currentQuestionIndex:this.state.currentQuestionIndex+1}) }  >
+                <TouchableOpacity  style={styles.buttonBackgroundCorrect}  onPress={() => this.setState({ currentQuestionIndex:this.state.currentQuestionIndex+1 ,correctAnswer:this.state.correctAnswer+1,  showAnswerFlag: false }) }  >
                   <Text style={styles.textButtonBgCorrect}>Correct</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity  style={styles.buttonBackgroundinCorrect}  onPress={() => this.setState({ currentQuestionIndex:this.state.currentQuestionIndex+1})}  >
+                <TouchableOpacity  style={styles.buttonBackgroundinCorrect}  onPress={() => this.setState({ currentQuestionIndex:this.state.currentQuestionIndex+1 ,incorrectAnswer:this.state.incorrectAnswer+1, showAnswerFlag: false})}  >
                   <Text style={styles.textButtonBginCorrect}>Incorrect</Text>
                 </TouchableOpacity>
             </View>
@@ -49,9 +51,18 @@ class QuizView  extends React.Component {
         } else {
             return (
               <View style={styles.container}>
-                <Text>
-                    your Results
+                <Text style={styles.text}>
+                    Your Results
                 </Text>
+                <Text style={styles.text}>
+                    You answered {this.state.correctAnswer} correct Question from {questions.length} Questions
+                </Text>
+                <Text style={styles.text}>
+                    Your Percent  {((this.state.correctAnswer / questions.length) * 100).toFixed(0)} %
+                </Text>
+                <TouchableOpacity  style={styles.buttonBorder}  onPress={() => this.props.navigation.navigate('Home') }>
+                  <Text style={styles.textButtonBorder}> Go Home </Text>
+                </TouchableOpacity>
               </View>
             )
         }
@@ -74,7 +85,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize:'20px',
-    color:'#aaa',
+    color:'#000',
     marginBottom: 20,
     textAlign: 'center'
   },

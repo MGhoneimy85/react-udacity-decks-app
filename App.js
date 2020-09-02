@@ -13,7 +13,7 @@ import NewDeckView from './components/newDeckView';
 import DeckDetailsView from './components/DeckDetailsView';
 import newCardView from './components/newCardView';
 import quizView from './components/QuizView';
-
+import { setLocalNotification } from './utils/helpers'
  
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -33,6 +33,9 @@ function HomeStackScreen() {
   );
 }
 export default function App() {
+  function componentDidMount() {
+    setLocalNotification()
+  }
   return (
      <Provider store={store}>
       <NavigationContainer>

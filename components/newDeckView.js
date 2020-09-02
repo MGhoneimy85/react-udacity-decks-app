@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
 },
 textButtonBg:{
   color:'#fff',
-  fontSize:'20px'
+  fontSize:'20px',
+  textAlign:"center"
 },
 input: {
 		  width: 250,
