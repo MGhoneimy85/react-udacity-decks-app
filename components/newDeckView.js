@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
   buttonBackground:{
     width:'150px',
     borderColor:'#000',
-    borderWidth:'2px',
-    borderRadius:'5px',
+    borderWidth:2,
+    borderRadius:5,
     backgroundColor:'#000',
     padding: 10,
     marginBottom:10,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 },
 textButtonBg:{
   color:'#fff',
-  fontSize:'20px',
+  fontSize:20,
   textAlign:"center"
 },
 input: {

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color:'white',
-    fontSize:'30px',
+    fontSize:30,
     padding:10
   }
 });

@@ -34,20 +34,20 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontSize:'40px',
+    fontSize:40,
     color: '#000',
     marginBottom: 20
   },
   text: {
-    fontSize:'20px',
+    fontSize:20,
     color:'#aaa',
     marginBottom: 20
   },
   buttonBorder:{
       width:'150px',
       borderColor:'#000',
-      borderWidth:'2px',
-      borderRadius:'5px',
+      borderWidth:2,
+      borderRadius:5,
       backgroundColor:'#000',
       padding: 10,
       marginBottom:10
@@ -55,14 +55,14 @@ const styles = StyleSheet.create({
   },
   textButtonBorder:{
     color:'#fff',
-    fontSize:'20px',
+    fontSize:20,
     textAlign: 'center'
   },
   buttonBackground:{
       width:'150px',
       borderColor:'#000',
-      borderWidth:'2px',
-      borderRadius:'5px',
+      borderWidth:2,
+      borderRadius:5,
       backgroundColor:'#fff',
       padding: 10,
       marginBottom:10
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   textButtonBg:{
     color:'#000',
-      fontSize:'20px',
+      fontSize:20,
       textAlign: 'center'
   }
 });

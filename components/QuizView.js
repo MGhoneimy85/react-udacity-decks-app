@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontSize:'40px',
+    fontSize:40,
     color: '#000',
     marginBottom: 20
   },
   text: {
-    fontSize:'20px',
+    fontSize:20,
     color:'#000',
     marginBottom: 20,
     textAlign: 'center'
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
   buttonBorder:{
       width:'150px',
       borderColor:'green',
-      borderWidth:'2px',
-      borderRadius:'5px',
+      borderWidth:2,
+      borderRadius:5,
       backgroundColor:'#fff',
       padding: 10,
       marginTop:20
@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
   },
   textButtonBorder:{
     color:'green',
-    fontSize:'20px',
+    fontSize:20,
     textAlign: 'center'
   },
   buttonBackgroundCorrect:{
       width:'150px',
       borderColor:'#000',
-      borderWidth:'2px',
-      borderRadius:'5px',
+      borderWidth:2,
+      borderRadius:5,
       backgroundColor:'green',
       padding: 10,
       marginTop:20
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
   },
   textButtonBgCorrect:{
     color:'#fff',
-      fontSize:'20px',
+      fontSize:20,
       textAlign: 'center'
   },
   buttonBackgroundinCorrect:{
     width:'150px',
     borderColor:'#000',
-    borderWidth:'2px',
-    borderRadius:'5px',
+    borderWidth:2,
+    borderRadius:5,
     backgroundColor:'red',
     padding: 10,
     marginTop:20
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
 },
 textButtonBginCorrect:{
   color:'#fff',
-    fontSize:'20px',
+    fontSize:20,
     textAlign: 'center'
 }
 });
